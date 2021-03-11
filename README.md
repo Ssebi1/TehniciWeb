@@ -21,4 +21,5 @@ latimea egala cu 70% din latimea paginii;</li>
 <p>Fontul folosit face parte din familia monospace.</p>
 
 <h3>Screenshots:</h3>
-![image](https://user-images.githubusercontent.com/38358431/110753156-e66e9980-824e-11eb-8c0b-eae97c4b0491.png)
+<img src="https://github.com/Ssebi1/TehniciWeb/blob/master/Tema1/images/Screenshot.png"> 
+
