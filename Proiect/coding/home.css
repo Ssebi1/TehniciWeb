@@ -227,6 +227,7 @@ h3{font-size: 18px;}
 }
 
 .exercises-item{
+    position: relative;
     width:300px;
     height:auto;
     margin-top:20px;
@@ -242,8 +243,8 @@ h3{font-size: 18px;}
 }
 
 .exercises-item:hover{
-    transform: translate(-4px,-4px);
-    box-shadow: 9px 9px 13px -1px rgba(209,209,209,1);
+    transform: translate(-2px,-2px);
+    box-shadow: 7px 7px 13px -1px rgba(209,209,209,1);
 
 }
 
@@ -256,6 +257,15 @@ h3{font-size: 18px;}
     border-bottom:2px solid #4e71a0;
     display: block;
 }
+
+.exercise-save{
+    position:absolute;
+    right:15px;
+    top:15px;
+    color: #F0D254;
+    font-size:18px;
+}
+
 .exercise-title{
     font-size:22px;
     text-align: center;
@@ -345,3 +355,4 @@ h3{font-size: 18px;}
 .exercise-difficulty-easy{
     background-color: #96BF48;
 }
+
