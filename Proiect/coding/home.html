@@ -18,12 +18,21 @@
             <div class="logo-back">
                 <img class="navbar-logo" src="../images/logo.png" alt="Gym">
             </div>
+            <div class="hamburger-sidemenu"><i class="fas fa-bars"></i></div>
             <ul class="navbar-items">
                 <li>About</li>
                 <li>Contact</li>
+                <li class="account-dropdown">
+                    <span><i class="far fa-user-circle"></i> Account</span>
+                    <div class="account-items">
+                        <div>Edit</div>
+                        <div>Log out</div>
+                    </div>
+                </li>
                 <li class="login-button">Login</li>
                 <li class="register-button">Register</li>
             </ul>
+
         </div>
 
         <div class="showcase-container">
@@ -43,7 +52,7 @@
         <div class="showcase-bar">
             <div class="showcase-bar-item">50+ exercises</div><span></span>
             <div class="showcase-bar-item">3 difficulty levels</div>
-            <div class="showcase-bar-item">Find an exercise &ensp;<i class="fas fa-chevron-down"></i></div>
+            <div class="showcase-bar-item">Find an exercise </div>
         </div>
 
         <div class="exercises-container">
@@ -163,10 +172,27 @@
             </div>
             
         </div>
+        <div class="exercises-view-more">View more <i class="fas fa-chevron-down"></i></div>
+        
+        <div class="testimonials">
+            <i class="fas fa-quote-right testimonials-quotes"></i>
+            <div class="testimonials-item">
+                <div class="testimonials-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <div class="testimonials-author"><img src="../images/author-1.jpeg">Josh</div>
+            </div>
+        </div>
+
+        <footer>
+            <ul class="footer-icons">
+                <a href="https://github.com/Ssebi1" target="_blank"><li><i class="fab fa-github"></i></li></a>
+                <a href="https://www.linkedin.com/in/dancau-sebastian/" target="_blank"><li><i class="fab fa-linkedin"></i></li></a>
+                <a href="https://www.facebook.com/sebastian.dancau.9/" target="_blank"><li><i class="fab fa-facebook"></i></i></li></a>
+            </ul>
+            <p>Dancau Sebastian</p>
+            <p>sebidancau@yahoo.com</p>
+            <a href="https://www.dancau-sebastian.com/" target="_blank" style="text-decoration:underline;"><p>dancau-sebastian.com</p></a>
+        </footer>
     </div>
 
-<script>
-    document.querySelector('.showcase-container .left').style.height = document.querySelector('.showcase-container .right').style.height;
-</script>
 </body>
 </html>
