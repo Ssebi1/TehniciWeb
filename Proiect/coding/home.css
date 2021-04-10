@@ -76,6 +76,8 @@ h3{font-size: 18px;}
 
 
 
+
+
 .navbar-items li{
     display: inline-block;
     font-size:18px; 
@@ -115,11 +117,19 @@ h3{font-size: 18px;}
     background-color:#98C1D9;
     color:black;
     font-size: 20px;
+    animation: button-animation 5s linear infinite;
 }
 
 .login-button:hover, .register-button:hover{
     background-color:#afdcf6;
 }
+
+@keyframes button-animation {
+    0% {background-color:#98C1D9;}
+    90% {background-color:#afdcf6;}
+    100% {background-color:#98C1D9;}
+  }
+  
 
 .hamburger-sidemenu{
     display: none ;
@@ -484,6 +494,14 @@ h3{font-size: 18px;}
     width:40%;
     margin:0 auto;
 }
+
+.testimonials-text::before{
+    content: '"';
+}
+.testimonials-text::after{
+    content: '"';
+}
+
 
 .testimonials-author{
     margin:0 auto;
