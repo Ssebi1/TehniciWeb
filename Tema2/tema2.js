@@ -51,9 +51,10 @@ window.addEventListener('load',()=>{
 
     const inputs = document.getElementsByTagName('input')
     let inputsCompleted = false;
+    let inputAdded = false;
 
     window.setTimeout(() => {
-        if(!inputsCompleted)
+        if(!inputAdded)
         {
             location.reload();
             window.alert('Sesiunea a expirat');
@@ -62,6 +63,8 @@ window.addEventListener('load',()=>{
 
     for(let i=0;i<inputs.length;i++)
         inputs[i].addEventListener('focusout',()=>{
+            if(!inputsCompleted && inputs[i].value!='')
+                inputAdded = true;
             if(!inputsCompleted && inputs[0].value!='' && inputs[1].value!='')
             {
                 inputsCompleted = true;
