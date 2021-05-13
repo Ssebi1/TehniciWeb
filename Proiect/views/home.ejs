@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/home.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/b42cb1ab32.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <%- include('includes/navbar') %>
+        <%- include('includes/showcase') %>
+
+    
+
+        <div class="exercises-container">
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+            <%- include('includes/exercise-item') %>
+        </div>
+        <div class="exercises-view-more">View more <i class="fas fa-chevron-down"></i></div>
+        
+        
+        <div class="testimonials">
+            <i class="fas fa-quote-right testimonials-quotes"></i>
+            <div class="testimonials-item">
+                <div class="testimonials-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <div class="testimonials-author"><img src="../images/author-1.jpeg" alt="author">Josh</div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+</html>
