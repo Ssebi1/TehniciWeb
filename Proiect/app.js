@@ -10,6 +10,11 @@ app.listen(4040,(err) => {
 });
 
 
+// Routes
+app.get('/',(req,res) => {
+    res.redirect('/home');
+})
+
 app.get('/home',(req,res) => {
     res.render('home.ejs');
 });
