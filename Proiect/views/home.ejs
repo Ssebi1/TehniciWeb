@@ -20,16 +20,9 @@
     
 
         <div class="exercises-container">
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
-            <%- include('includes/exercise-item') %>
+            <% exercises.forEach(ex => { %>
+                <%- include('includes/exercise-item',{exercise:ex}) %>
+            <% }) %>
         </div>
         <div class="exercises-view-more">View more <i class="fas fa-chevron-down"></i></div>
         

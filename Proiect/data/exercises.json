@@ -1,0 +1,76 @@
+{
+    "exercises":[
+        {
+            "id": 1,
+            "image": "../images/exercise-1.jpg",
+            "title": "Standing Shoulder Press",
+            "muscle": "Shoulders",
+            "equipment": "Elastic bands",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": 2,
+            "image": "../images/exercise-2.jpg",
+            "title": "Standing Chest Fly",
+            "muscle": "Middle Chest",
+            "equipment": "Elastic bands",
+            "difficulty": "easy"
+        },
+        {
+            "id": 3,
+            "image": "../images/exercise-3.jpg",
+            "title": "Military Push",
+            "muscle": "Middle Chest, Triceps",
+            "equipment": "Elastic bands",
+            "difficulty": "hard"
+        },
+        {
+            "id": 4,
+            "image": "../images/exercise-4.jpg",
+            "title": "Lat Extension",
+            "muscle": "Outer Back",
+            "equipment": "Elastic bands",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": 5,
+            "image": "../images/exercise-5.jpg",
+            "title": "Assisted Reverse Grip Pull Ups",
+            "muscle": "Outer Back",
+            "equipment": "Elastic bands",
+            "difficulty": "easy"
+        },
+        {
+            "id": 6,
+            "image": "../images/exercise-6.jpg",
+            "title": "Reverse Grip Lat Pulldown",
+            "muscle": "Outer Back",
+            "equipment": "Elastic bands",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": 7,
+            "image": "../images/exercise-7.jpg",
+            "title": "Reverse Biceps Curls",
+            "muscle": "Biceps",
+            "equipment": "Elastic bands",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": 8,
+            "image": "../images/exercise-8.jpg",
+            "title": "Side Biceps Curls",
+            "muscle": "Biceps",
+            "equipment": "Elastic bands",
+            "difficulty": "hard"
+        },
+        {
+            "id": 9,
+            "image": "../images/exercise-9.jpg",
+            "title": "Standing Triceps Extension",
+            "muscle": "Triceps",
+            "equipment": "Elastic bands",
+            "difficulty": "intermediate"
+        }
+    ]
+}

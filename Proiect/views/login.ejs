@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/home" class="back-button">Back</a>
+        <h1>Login</h1>
+        <form method="POST" action="loginauth">
+            <label>Username</label><br>
+            <input type="text" id="username" name="username" required>
+            <label>Password</label><br>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <div class="error">
+                <% if(error == 1){ %>
+                    Username has to be longer!
+                <% } %>
+                <% if(error == 2){ %>
+                    Password has to be longer!
+                <% } %>
+                <% if(error == 3){ %>
+                    Username and password incorrect!
+                <% } %>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

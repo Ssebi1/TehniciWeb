@@ -1,5 +1,7 @@
 const DOM = {
     'exerciseItems': document.querySelectorAll('.exercises-item'),
+    'exerciseItemsImages': document.querySelectorAll('.exercises-item-image'),
+    'exercisesContainer': document.querySelector('.exercises-container'),
     'viewMoreButton': document.querySelector('.exercises-view-more'),
     'exerciseSaveIcon': document.querySelectorAll('.exercise-save'),
     'exerciseSaveButton': document.querySelectorAll('.exercise-save-button'),
@@ -43,41 +45,41 @@ const viewMoreFunctinality = (function (){
 })();
 
 const exerciseSaveFunctionality = (function (){
-    let clickable = true;
     for(let i=0;i<DOM['exerciseSaveButton'].length;i++)
     {
-        DOM['exerciseSaveButton'][i].addEventListener('click',() => {
-            
-            if(clickable)
+        DOM['exerciseSaveButton'][i].addEventListener('click',(e) => {
+            e.stopPropagation();
+            if(DOM['exerciseSaveButton'][i].dataset.selected == 'false')
             {
-                if(DOM['exerciseSaveButton'][i].dataset.selected == 'false')
-                {
-                    DOM['exerciseSaveButton'][i].innerHTML = '';
-                    let textNode = document.createElement('i')
-                    textNode.className = 'fas fa-star exercise-save'
-                    DOM['exerciseSaveButton'][i].appendChild(textNode);
-                    DOM['exerciseSaveButton'][i].dataset.selected = 'true'
-                }
-                else
-                {
-                    DOM['exerciseSaveButton'][i].innerHTML = '';
-                    let textNode = document.createElement('i')
-                    textNode.className = 'far fa-star exercise-save'
-                    DOM['exerciseSaveButton'][i].appendChild(textNode);
-                    DOM['exerciseSaveButton'][i].dataset.selected = 'false'
-                }
-                
-                DOM['exerciseSaveButton'][i].style.opacity = '1';
-                clickable = false
-                setTimeout(() => {
-                    window.location.href ='/save?id=';
-                },1000)
+                DOM['exerciseSaveButton'][i].innerHTML = '';
+                let textNode = document.createElement('i')
+                textNode.className = 'fas fa-star exercise-save'
+                DOM['exerciseSaveButton'][i].appendChild(textNode);
+                DOM['exerciseSaveButton'][i].dataset.selected = 'true'
+            }
+            else
+            {
+                DOM['exerciseSaveButton'][i].innerHTML = '';
+                let textNode = document.createElement('i')
+                textNode.className = 'far fa-star exercise-save'
+                DOM['exerciseSaveButton'][i].appendChild(textNode);
+                DOM['exerciseSaveButton'][i].dataset.selected = 'false'
             }
             
-            
+            DOM['exerciseSaveButton'][i].style.opacity = '1';
         })
     }
     
+})();
+
+const seenExercises = (function(){
+    DOM['exerciseItems'].forEach(el => {
+        el.addEventListener('click',e => {
+            e.currentTarget.classList.add('seen');
+        })
+    })
+    
+
 })();
 
 DOM['form'].addEventListener('submit',(e) =>{

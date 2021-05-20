@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/home" class="back-button">Back</a>
+        <h1>Register</h1>
+        <form method="POST" action="registerauth">
+            <label>Username</label><br>
+            <input type="text" id="username" name="username" required>
+
+            <label>Email</label><br>
+            <input type="email" id="email" name="email">
+
+            <label>Password</label><br>
+            <input type="password" id="password" name="password" required>
+
+            <label>Gender</label><br>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="none" selected>None</option>
+            </select>
+
+            <button type="submit">Register</button>
+            <div class="error">
+                <% if(error == 1){ %>
+                    Username has to be longer!
+                <% } %>
+                <% if(error == 2){ %>
+                    Password has to be longer!
+                <% } %>
+                <% if(error == 3){ %>
+                    Username is not available!
+                <% } %>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

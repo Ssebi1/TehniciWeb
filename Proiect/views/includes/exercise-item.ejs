@@ -1,19 +1,19 @@
-<div class="exercises-item">
-    <div class="exercises-item-image"></div>
+<div class="exercises-item" data-id="1">
+    <div class="exercises-item-image" style="background-image:url(<%= exercise['image'] %>);"></div>
     <a class="exercise-save-button" data-selected="false"><i class="far fa-star exercise-save"></i></a>
-    <div class="exercise-title">Incline Push-ups</div>
+    <div class="exercise-title"><%= exercise['title'] %></div>
     <div class="exercise-muscle">
         <img src="../images/muscle.png" alt="muscle">
-        <span class="muscle-text">Chest, triceps</span>
+        <span class="muscle-text"><%= exercise['muscle'] %></span>
     </div>
     <div class="exercise-equipment">
         <img src="../images/equipment.png" alt="equipment">
-        <span class="equipment-text">No equipment</span>
+        <span class="equipment-text"><%= exercise['equipment'] %></span>
     </div>
-    <div class="exercise-difficulty exercise-difficulty-intermediate">
+    <div class="exercise-difficulty exercise-difficulty-<%= exercise['difficulty'] %>">
         <div class="difficulty-bar difficulty-bar-1 difficulty-bar-active"></div>
         <div class="difficulty-bar difficulty-bar-2 difficulty-bar-active"></div>
         <div class="difficulty-bar difficulty-bar-3"></div>
-        <span class="difficulty-text">Intermediate</span>
+        <span class="difficulty-text"><%= exercise['difficulty'] %></span>
     </div>
 </div>

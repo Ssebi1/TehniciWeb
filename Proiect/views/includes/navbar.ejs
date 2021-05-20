@@ -5,17 +5,17 @@
             </div>
             <div class="hamburger-sidemenu"><i class="fas fa-bars"></i></div>
             <ul class="navbar-items">
-                <li>About</li>
-                <li>Contact</li>
+                <% if(locals.username){ %>
                 <li class="account-dropdown">
                     <span><i class="far fa-user-circle"></i> Account</span>
                     <div class="account-items">
-                        <div>Edit</div>
-                        <div>Log out</div>
+                        <a href='/logout'><div>Log out</div></a>
                     </div>
                 </li>
-                <li class="login-button">Login</li>
-                <li class="register-button">Register</li>
+                <% } else{ %>
+                <a href='/login'><li class="login-button">Login</li></a>
+                <a href='/register'><li class="register-button">Register</li></a>
+                <% } %>
             </ul>
 
         </div>
