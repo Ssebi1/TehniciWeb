@@ -1,0 +1,57 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: roboto;
+    height: 100%;
+    width: 100%;
+    background-color:#F1FAEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face 
+{
+    font-family: roboto;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+.back{
+    position:fixed;
+    top:5px;
+    left:5px;
+    color:black;
+    text-decoration: none;
+}
+
+table{
+    margin:0 auto;
+    width:100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-top:50px;
+    color:white;
+}
+
+table a{
+    color:white;
+}
+
+td,th{
+    padding:10px;
+    text-align: center;
+}
+
+th{
+    font-size: 20px;
+    background-color:#1D3557;
+}
+
+tr:nth-child(even)
+{
+    background-color:#457B9D;
+}
+tr:nth-child(odd)
+{
+    background-color:#5892b6;
+}

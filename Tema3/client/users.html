@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b42cb1ab32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="users.css">
+    <title>Users</title>
+</head>
+<body>
+    <a href='home.html' class="back">Back</a>
+    <div class="table"></div>
+
+    <script>
+        const getUsers = async () => {
+            const response = await fetch('http://localhost:4040/users',{ method: 'GET' });
+            const users = await response.json();
+            return users;
+        }
+        const deleteUser = async (id) => {
+            await fetch('http://localhost:4040/users/' + String(id) , {method: 'DELETE'})
+        }
+
+        window.onload = async () => {
+            const users = await getUsers()
+            let htmlTable = '<table><tr><th>Firstname</th><th>Lastname</th><th>Email</th><th>Edit</th><th>Delete</th></tr>'
+            users.forEach(user => {
+                let tableRow = '<tr><td>'+user["firstname"]+'</td><td>'+user["lastname"]+'</td><td>'+user["email"]+'</td><td><a href="edit.html?id=' + user["id"] + '"><i class="fas fa-pen"></i></a></td><td class="delete" style="cursor:pointer;" data-id="'+ user["id"]+'"><i class="fas fa-trash"></i></td>'
+                htmlTable += tableRow
+            })
+            htmlTable += '</table>'
+            document.querySelector('.table').innerHTML = htmlTable
+
+            const userDelete = () => {
+                document.querySelectorAll('.delete').forEach(el => {
+                el.addEventListener('click',async () => {
+                    await deleteUser(el.dataset.id)
+                    const users = await getUsers()
+                    let htmlTable = '<table><tr><th>Firstname</th><th>Lastname</th><th>Email</th><th>Edit</th><th>Delete</th></tr>'
+                    users.forEach(user => {
+                        let tableRow = '<tr><td>'+user["firstname"]+'</td><td>'+user["lastname"]+'</td><td>'+user["email"]+'</td><td><a href="edit.html?id=' + user["id"] + '"><i class="fas fa-pen"></i></a></td><td class="delete" style="cursor:pointer;" data-id="'+ user["id"]+'"><i class="fas fa-trash"></i></td>'
+                        htmlTable += tableRow
+                    })
+                    htmlTable += '</table>'
+                    document.querySelector('.table').innerHTML = htmlTable
+                    userDelete()
+                    })
+                })
+            }
+            
+            userDelete()
+        }
+        
+        
+    </script>
+</body>
+</html>

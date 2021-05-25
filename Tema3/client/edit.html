@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <a href='users.html' class="back">Back</a>
+    <div class="container">
+        <h2>Edit user</h2>
+        <form>
+            <label>First name</label><br>
+            <input type="text" name="firstname" class="firstname" required><br>
+
+            <label>Last name</label><br>
+            <input type="text" class='lastname' required><br>
+
+            <label>Email</label><br>
+            <input type="email" class='email' required minlength="6"><br>
+
+            <button type='reset' class="submit-button">Save</button>
+        </form>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id')
+
+        const getUser = async (userId) => {
+            const response = await fetch('http://localhost:4040/edit/' + String(userId),{ method: 'GET' });
+            const users = await response.json();
+            return users;
+        }
+
+        const editUser = async (firstname,lastname,email) => {
+            await fetch('http://localhost:4040/edit/' + String(id) + '/' + firstname + '/' + lastname + '/' + email,{ method: 'PUT' });
+        }
+
+        const computeUser = async () => {
+                const user = await getUser(id)
+                document.querySelector('.firstname').value = user[0]['firstname'];
+                document.querySelector('.lastname').value = user[0]['lastname'];
+                document.querySelector('.email').value = user[0]['email'];
+
+                document.querySelector('.submit-button').addEventListener('click',async () => {
+                    const firstname = document.querySelector('.firstname').value
+                    const lastname = document.querySelector('.lastname').value
+                    const email = document.querySelector('.email').value
+                    await editUser(firstname,lastname,email);
+                    await computeUser();
+                })
+            }
+
+        window.onload = async () => {
+            await computeUser()
+        }
+    </script>
+</body>
+</html>
