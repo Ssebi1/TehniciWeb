@@ -1,0 +1,18 @@
+<div class="exercises-item" data-id="<%= exercise['id'] %>">
+    <div class="exercises-item-image" style="background-image:url(<%= exercise['image'] %>);"></div>
+    <div class="exercise-title"><%= exercise['title'] %></div>
+    <div class="exercise-muscle">
+        <img src="../images/muscle.png" alt="muscle">
+        <span class="muscle-text"><%= exercise['muscle'] %></span>
+    </div>
+    <div class="exercise-equipment">
+        <img src="../images/equipment.png" alt="equipment">
+        <span class="equipment-text"><%= exercise['equipment'] %></span>
+    </div>
+    <div class="exercise-difficulty exercise-difficulty-<%= exercise['difficulty'] %>">
+        <div class="difficulty-bar difficulty-bar-1 difficulty-bar-active"></div>
+        <div class="difficulty-bar difficulty-bar-2 difficulty-bar-active"></div>
+        <div class="difficulty-bar difficulty-bar-3"></div>
+        <span class="difficulty-text"><%= exercise['difficulty'] %></span>
+    </div>
+</div>

@@ -56,6 +56,9 @@ const exerciseSaveFunctionality = (function (){
                 textNode.className = 'fas fa-star exercise-save'
                 DOM['exerciseSaveButton'][i].appendChild(textNode);
                 DOM['exerciseSaveButton'][i].dataset.selected = 'true'
+                setTimeout(() => {
+                    window.location.replace("/home/save-exercise/id="+DOM['exerciseSaveButton'][i].parentElement.dataset['id']);
+                },300);
             }
             else
             {
@@ -64,6 +67,9 @@ const exerciseSaveFunctionality = (function (){
                 textNode.className = 'far fa-star exercise-save'
                 DOM['exerciseSaveButton'][i].appendChild(textNode);
                 DOM['exerciseSaveButton'][i].dataset.selected = 'false'
+                setTimeout(() => {
+                    window.location.replace("/home/unsave-exercise/id="+DOM['exerciseSaveButton'][i].parentElement.dataset['id']);
+                },300);
             }
             
             DOM['exerciseSaveButton'][i].style.opacity = '1';

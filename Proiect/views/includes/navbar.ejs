@@ -1,15 +1,16 @@
 <div class="navbar-background"></div>
         <div class="navbar">
-            <div class="logo-back">
+            <a href='/home'><div class="logo-back">
                 <img class="navbar-logo" src="../images/logo.png" alt="Gym">
-            </div>
+            </div></a>
             <div class="hamburger-sidemenu"><i class="fas fa-bars"></i></div>
             <ul class="navbar-items">
                 <% if(locals.username){ %>
                 <li class="account-dropdown">
                     <span><i class="far fa-user-circle"></i> Account</span>
                     <div class="account-items">
-                        <a href='/logout'><div>Log out</div></a>
+                        <a href='/logout' style="color:white;text-decoration:none;"><div>Log out</div></a>
+                        <a href='/favorites' style="color:white;text-decoration:none;"><div>Favorites</div></a>
                     </div>
                 </li>
                 <% } else{ %>
