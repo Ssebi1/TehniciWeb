@@ -147,6 +147,29 @@ app.get('/logout',(req,res) => {
     res.redirect('/home');
 })
 
+// Email subscribe
+app.post('/subscribe',(req,res) => {
+    const email = req.body.email
+    let newEmail = {'email':email,'active':true}
+    let emails = readFile('emails.json')
+    let ok=0
+    emails['emails'].forEach(el => {
+        if(el.email == email)
+            {
+                res.status(200).send("<h1>Subscription added!</h1><br><a href='/home'>Go back</a>");
+                ok=1
+                return;
+            }
+    })
+    if(ok==0)
+    {
+        emails['emails'].push(newEmail);
+        fs.writeFileSync('./data/emails.json',JSON.stringify(emails))
+        res.status(200).send("<h1>Subscription added!</h1><br><a href='/home'>Go back</a>");
+    }
+    
+})
+
 // Adding exercise to favorites
 app.get('/home/save-exercise/:id',(req,res) => {
     if(req.session.username != undefined && req.session.username!='')

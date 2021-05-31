@@ -7,6 +7,7 @@ const DOM = {
     'exerciseSaveButton': document.querySelectorAll('.exercise-save-button'),
     'subscribeInput': document.querySelector('.showcase-button input'),
     'form': document.querySelector('#subscribe-form'),
+    'form-button': document.querySelector('#subscribe-form button'),
     'alert': document.querySelector('.alert'),
     'year': document.querySelector('.year')
 }
@@ -88,7 +89,8 @@ const seenExercises = (function(){
 
 })();
 
-DOM['form'].addEventListener('submit',(e) =>{
+
+DOM['form-button'].addEventListener('click',(e) =>{
     e.preventDefault();
     let email = DOM['subscribeInput'].value;
     let validation = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
@@ -99,7 +101,7 @@ DOM['form'].addEventListener('submit',(e) =>{
         }
     else
         {
-            DOM['form'].style.display='none';
+            DOM['form'].submit();
         }
         
 })
