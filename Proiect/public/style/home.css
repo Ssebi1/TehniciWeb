@@ -591,6 +591,7 @@ footer p{
     cursor: pointer;
     display: none;
     z-index:10;
+    font-size:16px;
 }
 
 .seen{

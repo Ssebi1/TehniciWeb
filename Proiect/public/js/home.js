@@ -6,7 +6,7 @@ const DOM = {
     'exerciseSaveIcon': document.querySelectorAll('.exercise-save'),
     'exerciseSaveButton': document.querySelectorAll('.exercise-save-button'),
     'subscribeInput': document.querySelector('.showcase-button input'),
-    'form': document.querySelector('#subscribe-form'),
+    'form': document.getElementById('#subscribe-form'),
     'form-button': document.querySelector('#subscribe-form button'),
     'alert': document.querySelector('.alert'),
     'year': document.querySelector('.year')
@@ -96,7 +96,6 @@ DOM['form-button'].addEventListener('click',(e) =>{
     let validation = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
     if(!validation)
         {
-            DOM['subscribeInput'].value='';
             alert('Email format is not correct');
         }
     else
@@ -117,6 +116,10 @@ DOM['subscribeInput'].addEventListener('keydown',(e) => {
 
 
 const alertTransition = () =>{
+    let fontSize = window.getComputedStyle(DOM['alert']).getPropertyValue('font-size')
+    fontSize = Number(fontSize.slice(0,-2))
+    DOM['alert'].style.fontSize = fontSize*randomNumber() + "px"
+    console.log(fontSize)
     if(DOM['alert'].style.display == 'none')
     {
         DOM['alert'].style.display= 'block';
@@ -135,6 +138,10 @@ const alertTransition = () =>{
 
 function randomTime() {
     return Math.floor(Math.random() * (25000-15000) + 15000);
+}
+
+function randomNumber() {
+    return Math.random() * (1.05-0.95) + 0.95;
 }
 
 DOM['alert'].addEventListener('click',alertTransition);
