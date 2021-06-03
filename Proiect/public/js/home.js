@@ -9,7 +9,8 @@ const DOM = {
     'form': document.getElementById('#subscribe-form'),
     'form-button': document.querySelector('#subscribe-form button'),
     'alert': document.querySelector('.alert'),
-    'year': document.querySelector('.year')
+    'year': document.querySelector('.year'),
+    'showcaseBarItems': document.getElementsByClassName('showcase-bar-item')
 }
 
 
@@ -53,6 +54,7 @@ const exerciseSaveFunctionality = (function (){
             if(DOM['exerciseSaveButton'][i].dataset.selected == 'false')
             {
                 DOM['exerciseSaveButton'][i].innerHTML = '';
+                // DOM['exerciseSaveButton'][i].getElementsByTagName('svg').remove();
                 let textNode = document.createElement('i')
                 textNode.className = 'fas fa-star exercise-save'
                 DOM['exerciseSaveButton'][i].appendChild(textNode);
@@ -112,6 +114,11 @@ DOM['subscribeInput'].addEventListener('keydown',(e) => {
         let email = DOM['subscribeInput'].value.slice(0,-1);
         DOM['subscribeInput'].value = email;
     }
+    else if(e.keyCode == 36)
+    {
+        e.preventDefault()
+        DOM['subscribeInput'].value = '';
+    }
 })
 
 
@@ -124,7 +131,7 @@ const alertTransition = () =>{
     {
         DOM['alert'].style.display= 'block';
         setTimeout(()=>{
-            DOM['alert'].style.bottom = '20px';
+            DOM['alert'].style.bottom = randomNumber()*20 + 'px';
         },500)
     }
     else
